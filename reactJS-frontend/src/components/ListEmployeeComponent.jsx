@@ -14,9 +14,9 @@ const ListEmployeeComponent = () => {
     }, []);
 
   return (
-    <div class="container">
-        <h2 class="text-center">List of Employees</h2>
-        <table class="table table-striped table-bordered">
+    <div className="container">
+        <h2 className="text-center">List of Employees</h2>
+        <table className="table table-striped table-bordered">
             <thead>
                 <tr>
                     <th scope="col">Id</th>
