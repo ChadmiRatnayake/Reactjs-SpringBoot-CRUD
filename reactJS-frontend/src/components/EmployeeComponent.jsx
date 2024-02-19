@@ -6,18 +6,18 @@ const EmployeeComponent = () => {
   const [lastName, setLastName] = useState('');
   const [email, setEmail] = useState('');
   
-  function handleFirstName(event){
-    setFirstName(event.target.value);
-  }
 
-  function handleLastName(event){
-    setLastName(event.target.value);
+  function saveEmployee(event){
+    event.preventDefault();
+    const employee = {firstName, lastName, email}
+    console.log()
   }
 
   return (
     <div className='container'>
+      <br /> <br />
       <div className='row'>
-        <div className='card'>
+        <div className='card col-md-6 offset-md-3 offset-md-3'>
           <h2 className='text-center'>Add Employee</h2>
           <div className='card-body'>
             <form>
@@ -29,7 +29,7 @@ const EmployeeComponent = () => {
                   name='firstName'
                   value={firstName}
                   className='form-control'
-                  onChange={handleFirstName}
+                  onChange={(event) => setFirstName(event.target.value)}
                 >
                 </input>
               </div>
@@ -42,9 +42,26 @@ const EmployeeComponent = () => {
                   name='lastName'
                   value={lastName}
                   className='form-control'
-                  onChange={handleLastName}
+                  onChange={(event) => setLastName(event.target.value)}
                 >
                 </input>
+              </div>
+
+              <div className='form-group mb=2'>
+                <label className='form-label'>Email:</label>
+                <input
+                  type='text'
+                  placeholder='Enter email of employee'
+                  name='email'
+                  value={email}
+                  className='form-control'
+                  onChange={(event) => setEmail(event.target.value)}
+                >
+                </input>
+              </div>
+
+              <div className='text-center'>
+              <button className='btn btn-success text-center mt-4' onClick={saveEmployee}>Submit</button>
               </div>
             </form>
 
