@@ -13,7 +13,39 @@ const EmployeeComponent = () => {
     lastName:'',
     email:''
   })
+
   const navigator = useNavigate();
+
+  function validateForm(){
+    let valid = true;
+
+    const errorsCopy = {... errors}
+
+    if(firstName.trim()){
+      errorsCopy.firstName = '';
+    }else{
+      errorsCopy.firstName = 'First name is required';
+      valid = false;
+    }
+
+    if (lastName.trim()){
+      errorsCopy.lastName = ''
+    }else{
+      errorsCopy.lastName = 'Last name is required';
+      valid = false;
+    }
+
+    if (email.trim()){
+      errorsCopy.email = ''
+    }else{
+      errorsCopy.email = 'Email is required';
+      valid = false;
+    }
+
+    setErrors(errorsCopy);
+
+    return valid;
+  }
 
   function saveEmployee(event){
     event.preventDefault();
