@@ -49,13 +49,17 @@ const EmployeeComponent = () => {
 
   function saveEmployee(event){
     event.preventDefault();
-    const employee = {firstName, lastName, email}
-    console.log()
 
-    createEmployee(employee).then((response) => {
-      console.log(response.data);    
-      navigator('/employees') 
-    })
+    if (validateForm){
+      const employee = {firstName, lastName, email}
+      console.log()
+
+      createEmployee(employee).then((response) => {
+        console.log(response.data);    
+        navigator('/employees') 
+      })
+    }
+    
   }
 
   return (
