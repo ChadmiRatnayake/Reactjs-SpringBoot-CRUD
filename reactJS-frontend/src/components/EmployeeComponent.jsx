@@ -24,21 +24,21 @@ const EmployeeComponent = () => {
     if(firstName.trim()){
       errorsCopy.firstName = '';
     }else{
-      errorsCopy.firstName = 'First name is required';
+      errorsCopy.firstName = 'First name required';
       valid = false;
     }
 
     if (lastName.trim()){
       errorsCopy.lastName = ''
     }else{
-      errorsCopy.lastName = 'Last name is required';
+      errorsCopy.lastName = 'Last name required';
       valid = false;
     }
 
     if (email.trim()){
       errorsCopy.email = ''
     }else{
-      errorsCopy.email = 'Email is required';
+      errorsCopy.email = 'Email required';
       valid = false;
     }
 
