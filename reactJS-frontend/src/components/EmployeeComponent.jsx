@@ -50,7 +50,7 @@ const EmployeeComponent = () => {
   function saveEmployee(event){
     event.preventDefault();
 
-    if (validateForm){
+    if (validateForm()){
       const employee = {firstName, lastName, email}
       console.log()
 
@@ -77,10 +77,11 @@ const EmployeeComponent = () => {
                   placeholder='Enter first name of employee'
                   name='firstName'
                   value={firstName}
-                  className='form-control'
+                  className={`form-control ${errors.firstName ? 'is-invalid' : ''}`}
                   onChange={(event) => setFirstName(event.target.value)}
                 >
                 </input>
+                {errors.firstName && <div className='invalid-feedback'>{errors.firstName}</div>}
               </div>
  
               <div className='form-group mb=2'>
@@ -90,10 +91,11 @@ const EmployeeComponent = () => {
                   placeholder='Enter last name of employee'
                   name='lastName'
                   value={lastName}
-                  className='form-control'
+                  className={`form-control ${errors.lastName ? 'is-invalid' : ''}`}
                   onChange={(event) => setLastName(event.target.value)}
                 >
                 </input>
+                {errors.lastName && <div className='invalid-feedback'>{errors.lastName}</div>}
               </div>
 
               <div className='form-group mb=2'>
@@ -103,10 +105,11 @@ const EmployeeComponent = () => {
                   placeholder='Enter email of employee'
                   name='email'
                   value={email}
-                  className='form-control'
+                  className={`form-control ${errors.email ? 'is-invalid' : ''}`}
                   onChange={(event) => setEmail(event.target.value)}
                 >
                 </input>
+                {errors.email && <div className='invalid-feedback'>{errors.email}</div>}
               </div>
 
               <div className='text-center'>
