@@ -21,7 +21,7 @@ const EmployeeComponent = () => {
     if(id){
       getEmployee(id).then((response) => {
         setFirstName(response.data.firstName);
-        setLastName(response.data.label);
+        setLastName(response.data.lastName);
         setEmail(response.data.email);
       }).catch(error => {
         console.error(error);
