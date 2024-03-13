@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { listEmployees } from '../services/EmployeeService'
+import { deleteEmployee, listEmployees } from '../services/EmployeeService'
 import { Button } from 'bootstrap';
 import { useNavigate, useParams } from 'react-router-dom';
 
@@ -22,6 +22,15 @@ const ListEmployeeComponent = () => {
 
     function updateEmployee(id){
         navigator(`/edit-employee/${id}`)
+    }
+
+    function removeEmployee(id){
+        console.log(id);
+        deleteEmployee(id).then((response) => {
+
+        }).catch(error => {
+            console.error(error);
+        })
     }
 
   return (
