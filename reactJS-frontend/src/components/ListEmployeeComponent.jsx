@@ -38,38 +38,40 @@ const ListEmployeeComponent = () => {
     }
 
   return (
-    <div className="container">
+    <div className="container" >
         <h2 className="text-center">List of Employees</h2>
         <button type="button" class="btn btn-primary mb-2" onClick={addNewEmployee}>Add Employee</button>
-        <table className="table table-info table-striped table-bordered">
-            <thead>
-                <tr>
-                    <th scope="col">Id</th>
-                    <th scope="col">First Name</th>
-                    <th scope="col">Last Name</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                {
-                    employees.map(employee =>
-                        <tr key={employee.id}>
-                            <td>{employee.id}</td>
-                            <td>{employee.firstName}</td>
-                            <td>{employee.lastName}</td>
-                            <td>{employee.email}</td>
-                            <td align='center'>
-                                <button class="btn btn-dark" onClick={()=> updateEmployee(employee.id)}>Update</button>
-                                <button class="btn btn-danger" onClick={()=> removeEmployee(employee.id)}
-                                    style={{marginLeft: '10px'}}
-                                >Delete</button>
-                            </td>
-                        </tr>
-                        )
-                }
-            </tbody>
-        </table>
+        <div style={{ maxHeight: '500px', overflowY: 'auto' }}>
+            <table className="table table-info table-striped table-bordered" >
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">First Name</th>
+                        <th scope="col">Last Name</th>
+                        <th scope="col">Email</th>
+                        <th scope="col">Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {
+                        employees.map(employee =>
+                            <tr key={employee.id}>
+                                <td>{employee.id}</td>
+                                <td>{employee.firstName}</td>
+                                <td>{employee.lastName}</td>
+                                <td>{employee.email}</td>
+                                <td align='center'>
+                                    <button class="btn btn-dark" onClick={()=> updateEmployee(employee.id)}>Update</button>
+                                    <button class="btn btn-danger" onClick={()=> removeEmployee(employee.id)}
+                                        style={{marginLeft: '10px'}}
+                                    >Delete</button>
+                                </td>
+                            </tr>
+                            )
+                    }
+                </tbody>            
+            </table>
+            </div>
     </div>
   )
 }
